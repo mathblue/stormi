@@ -1,0 +1,19 @@
+**transform (it was std::foreach) is more efficient than a for loop, use with lambda.
+*use the sanitizer to get more informations about the seg. fault.
+**try to implement the multithreading for the boyds or groups of them.
+*use runge kutta.
+*when possible use constants, all private and explicit constructor.
+*How to use doctest, single file a part or in every .cpp?
+*The Guard at the beginning of every .hpp to avoid double inclusions.
+*Change model to meke the boids see just a smaller sourraundings, see
+how much influence have the far away boids and what are the effective ones.
+*C++ version and options for the graphical library to avoid lagging.
+*TRY TO USE VALGRIND FOR MEMORY LEAKS.
+ 
+*remember to ignore the test folder in the git push.
+
+
+CMAKE:
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build/debug
+cmake --build build --target test
