@@ -35,8 +35,10 @@ target_link_libraries(boids PRIVATE sfml-graphics)
 if (BUILD_TESTING)
 
   # aggiungi l'eseguibile all.t
-#  add_executable(boids.t boids-test.cpp boid.cpp helper.cpp rules.cpp)
-  # aggiungi l'eseguibile all.t alla lista dei test
- # add_test(NAME boids.t COMMAND boids.t)
+  add_executable(boids.t boids-test.cpp boid.cpp helper.cpp rules.cpp )
+  
+  target_link_libraries(boids.t PRIVATE sfml-graphics)  
+# aggiungi l'eseguibile all.t alla lista dei test
+  add_test(NAME boids.t COMMAND boids.t)
 
 endif()
