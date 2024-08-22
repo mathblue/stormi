@@ -3,7 +3,7 @@
 
 #### Mattia Corrà
 Github Repository: https://github.com/mathblue/stormi
-
+h
 ### Logica e Design 
 Il progetto è suddiviso in tre Translation Units, la strategia implementativa è quella della programmazione ad oggetti e qui la TU che contiene la classe principale è la "boid.cpp" con il suo header "boid.hpp". L'oggetto Boid rappresenta il singolo uccello, caratterizzato dagli attributi posizione e velocità (ci siamo limitati a moti nel piano) più un set di puntatori Boid chiamati "neighbors". Quest'ultimo attributo dovrebbe contenere l'insieme degli uccelli che sono entro il raggio d'influenza reciproca, la scelta di usare un set ci consente di avere una complessità logaritmica nelle query grazie all'ordinamento interno (di default rispetto all'indirizzo di memoria che per noi è perfetto).  La scelta di avere questo attributo, oltre ad essere una comodità strutturale doveva aiutare per implementare delle funzioni di aggiornamento più intelligenti di quella in realtà usata, speravo di poter sfruttare la struttura di grafo non orientato conseguente per aggiornare i vicini in maniera sub quadratica ma non è riusulato fattibile come credevo.
 Usando raw pointers non si incorre nell'eventualità di memory leaks come nel caso di oggetti allocati nella Heap dinamicamente dallo sviluppatore, in questo caso la gestione dell'allocazione e successiva distruzione nella stack è lasciata al compilatore. L'unica eventuale problematica sarebbe che questi puntatori diventassero dangling nel caso in cui si punti ad una variabile out of scope; nel nostro caso ho inizializzato il vettore di Boids una volta per tutte all'inizio del main e tutta l'esecuzione rimane dentro lo scope del vettore.
