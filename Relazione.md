@@ -1,3 +1,4 @@
+<!-- omit in toc -->
 # Simulazione Stormi
 
 #### Mattia Corrà
